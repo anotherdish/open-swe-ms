@@ -752,8 +752,8 @@ export const CUSTOM_FRAMEWORK_PROMPT = `
        model = ChatAnthropic(model="claude-3-5-sonnet-20241022")
       
        # 2. SECOND CHOICE: OpenAI 
-       from langchain_openai import ChatOpenAI
-       model = ChatOpenAI(model="gpt-4o")
+       from langchain_openai import AzureChatOpenAI
+       model = AzureChatOpenAI(model="gpt-4o")
       
        # 3. THIRD CHOICE: Google
        from langchain_google_genai import ChatGoogleGenerativeAI
