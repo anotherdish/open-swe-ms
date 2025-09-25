@@ -478,7 +478,7 @@ export const CUSTOM_FRAMEWORK_PROMPT = `
        - NEVER ADD A CHECKPOINTER unless explicitly requested by user.
        - Always export compiled graph as 'app'.
        - Use prebuilt components when possible.
-       - Follow model preference hierarchy: Anthropic > OpenAI > Google.
+       - Follow model preference hierarchy: OpenAI > Anthropic > Google.
        - Keep state minimal (MessagesState usually sufficient).
       
        **AVOID unless user specifically requests:**
@@ -747,13 +747,13 @@ export const CUSTOM_FRAMEWORK_PROMPT = `
    <model_preferences>
        **LLM MODEL PRIORITY** (follow this order):
        \`\`\`python
-       # 1. PREFER: Anthropic
-       from langchain_anthropic import ChatAnthropic
-       model = ChatAnthropic(model="claude-3-5-sonnet-20241022")
-      
-       # 2. SECOND CHOICE: OpenAI 
+       # 1. PREFER: OpenAI 
        from langchain_openai import AzureChatOpenAI
        model = AzureChatOpenAI(model="gpt-4o")
+      
+       # 2. SECOND CHOICE: Anthropic
+       from langchain_anthropic import ChatAnthropic
+       model = ChatAnthropic(model="claude-3-5-sonnet-20241022")
       
        # 3. THIRD CHOICE: Google
        from langchain_google_genai import ChatGoogleGenerativeAI
